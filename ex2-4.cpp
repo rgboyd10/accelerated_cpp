@@ -58,10 +58,15 @@ int main()
 		{
 		  cout << "*";
 		}
-	      else
-		{
+	      else if(r == 1 && c == 1) //test this when you get g++ back on your linux machine.
+		{ 
 		cout << blanks;
 		}
+		  else
+		  {
+		  //do nothing? find syntax for this;
+			  ;
+		  }
 	      ++c;
 	    }
 	}
