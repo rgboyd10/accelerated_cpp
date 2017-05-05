@@ -60,7 +60,7 @@ int main()
 		}
 	      else
 		{
-		cout << ""; 
+		cout << blanks;
 		}
 	      ++c;
 	    }
