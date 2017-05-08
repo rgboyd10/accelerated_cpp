@@ -1,6 +1,11 @@
 /*
+<<<<<<< dev
 Q - The framing program writes the mostly blank lines that separates the borders from the greeting one character at a time.  Change the program so that it writes all the psaces needed in a single output expression.
 A - 
+=======
+Q - The framing program writes the mostly blank lines that separates the borders from the greeting one character at a time.  Change the program so that it writes all the spaces needed in a single output expression.
+A - See below.
+>>>>>>> master
 */
 
 #include <iostream>
@@ -30,7 +35,12 @@ int main()
   //the number of rows and columns to write
   const int rows = pad * 2 + 3;
   const string::size_type cols = greeting.size() + pad * 2 + 2;
+<<<<<<< dev
 
+=======
+  const string::size_type blanks = greeting.size();
+  
+>>>>>>> master
   //write a blank line to separate the output from the input
   cout << endl;
 
@@ -42,7 +52,11 @@ int main()
 
       //invariant: we have written c characters so far in the current view
       while (c != cols)
+<<<<<<< dev
 	{
+=======
+	  {
+>>>>>>> master
 	  //is it time to write the greeting?
 	  if(r == pad + 1 && c == pad +1)
 	    {
@@ -57,10 +71,22 @@ int main()
 		{
 		  cout << "*";
 		}
+<<<<<<< dev
 	      else
 		{
 		cout << " ";
 		}
+=======
+	      else if(r == 1 && c == 1) //test this when you get g++ back on your linux machine.
+		{ 
+		cout << blanks;
+		}
+		  else
+		  {
+		  //do nothing? find syntax for this;
+			  ;
+		  }
+>>>>>>> master
 	      ++c;
 	    }
 	}
@@ -68,4 +94,7 @@ int main()
     }
   return 0;
 }
+<<<<<<< dev
 
+=======
+>>>>>>> master
