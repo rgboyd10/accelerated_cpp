@@ -21,32 +21,34 @@ int main()
   vector <string> students_names;
   vector <double> students_grades;
   string name;
+  string decision;
   double grade;
 
   //read in the student's names
-  cout << "Please enter the student's name. When you are finished, enter Ctrl-d (end of file)." << endl;
-  while(cin >> name)
+  while(cin)
     {
-      cout << "Please enter the student's name. When you are finished, enter Ctrl-d (end of file)." << endl;
+      cout << "Please enter the student's name and hit enter. If you are finished enter student's names and grades, hit Ctrl-d." << endl;
+      cin >> name;
       students_names.push_back(name);
-      cout << "You've entered " << name << "." << endl;
-    }
+      
+      cout << "Please enter the student's grade and hit enter. If you are finished enter student's names and grades, hit Ctrl-d." << endl;
+      cin >> grade;
+      students_grades.push_back(grade);
 
-  //read in the grades for each student
-  while (cin >> grade && students_grades.size() <= students_names.size())
-    {
-      for(int x = 0; x <= students_names.size(); x++)
+      cout << "Would you like to continue entering students and grades? y/n" << endl;
+      cin >> decision; 
+      if(decision == "n")
 	{
-	  cout << "Please enter the grade for " << students_names[x] << "When you are finished, enter Ctrl-d (end of file)." << endl;
-	  students_grades.push_back(grade);
-    }
+	  break;
+	}
+      
     }
   
   //list out the student's and their corresponding grades
       cout << "Please see the student's names and grades below." << endl;
-      for(int y = 0; y <= students_names.size(); y++)
+      for(int y = 0; y < students_names.size(); y++)
 	{
 	  cout << students_names[y] << " || " << students_grades[y] << endl;
 	}
-  
+      return 0;
 }
